@@ -2,6 +2,7 @@
     --white: #ffffff;
     --black: #000000;
     --accent: #432e1d;
+    --accent2:#decca8;
     --teal: #227b94;
     --light-blue: #78b7d0;
     --yellow: #ffdc7f;
@@ -27,6 +28,7 @@
   body {
     width: 100%;
     overflow-x: hidden;
+    // scroll-behavior: smooth;
     // background-color: var(--light-grey);
   }
   
@@ -65,25 +67,25 @@
 //     color: var(--white);
 //   }
   
-  .btn {
-    padding: 10px 20px;
-    background-color: var(--yellow);
-    color: var(--accent);
-    width: fit-content;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--trans);
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0.7px;
-    word-spacing: 1px;
-    cursor: pointer;
-    border: none;
+  // .btn {
+  //   padding: 10px 20px;
+  //   background-color: var(--yellow);
+  //   color: var(--accent);
+  //   width: fit-content;
+  //   border-radius: 10px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   transition: var(--trans);
+  //   font-size: 20px;
+  //   font-weight: 400;
+  //   letter-spacing: 0.7px;
+  //   word-spacing: 1px;
+  //   cursor: pointer;
+  //   border: none;
   
-    &:hover{
-      background-color: var(--accent);
-      color: var(--white);
-    }
-  }
+  //   &:hover{
+  //     background-color: var(--accent);
+  //     color: var(--white);
+  //   }
+  // }

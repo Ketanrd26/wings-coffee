@@ -2,13 +2,16 @@
   width: 100%;
   height: 100svh;
   background-color: var(--accent);
+  position: relative;
 
   .herosection_cont {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    flex-direction: column;
 
+    gap: calc(var(--unit)*2);
     .headings_list {
       width: fit-content;
       display: flex;
@@ -45,15 +48,99 @@
           animation: viewText 0.5s ease-in-out forwards;
 
           @keyframes viewText {
-            0%{
-                top: 100%;
+            0% {
+              top: 100%;
             }
-            100%{
-                top: 0;
+            100% {
+              top: 0;
             }
           }
         }
       }
+    }
+
+    .tea_btn {
+      width: 200px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: calc(var(--unit) / 2);
+      padding: 10px 20px;
+      border: 1px solid var(--white);
+      border-radius: 25px;
+      cursor: pointer;
+      position: relative;
+      transition: var(--trans);
+
+      span {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+
+        img {
+          height: 30px;
+          transform: rotateY(180deg);
+        }
+      }
+
+      .animation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: var(--trans);
+
+        img {
+          height: 40px;
+        }
+
+        .kettle {
+          transform: rotateY(180deg);
+          animation: pourf 3s linear forwards;
+
+          @keyframes pourf {
+            0% {
+              transform: rotateY(180deg);
+            }
+
+            100% {
+              transform: translate(7px, -16px) rotate(210deg) rotateX(150deg);
+            }
+          }
+        }
+      }
+
+      &:hover {
+        border: none;
+        .animation {
+          display: flex;
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 100%;
+
+    img {
+      width: 100%;
     }
   }
 }

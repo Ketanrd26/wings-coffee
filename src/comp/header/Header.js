@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import logo from "../../asstes/wings_logo.webp";
@@ -27,11 +27,28 @@ const Header = () => {
   ];
 
 
-const [searchInput, setSearchInput]=useState(false)
+const [searchInput, setSearchInput]=useState(false);
+
+const [header,setHeader] = useState(false);
+
+useEffect(()=>{
+  const scrollHeader = ()=>{
+    if(window.scrollY >= 50){
+      setHeader(true)
+    }
+  }
+
+  window.addEventListener("scroll", scrollHeader);
+
+
+  return(
+    ()=> window.removeEventListener("scroll", scrollHeader)
+  )
+})
 
   return (
     <>
-      <div class="header_parent">
+      <div class={ header ?  "header_parent active" : "header_parent"}>
         <div class="header_cont">
           <div class="right_navs">
             <div class="navs">
