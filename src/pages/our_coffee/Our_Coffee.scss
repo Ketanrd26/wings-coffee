@@ -1,0 +1,26 @@
+.our_coffee_parent{
+    width: 100%;
+    // padding: 80px 0px;
+    height: 100vh;
+    background-color: var(--accent2);
+
+    .our_coffee_cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 110px 10px 50px 10px;
+        flex-direction: column;
+        gap: var(--unit);
+
+        h2{
+            // padding: 30px 0px;
+            font-size: 40px;
+        }
+
+
+        img{
+            width: 80%;
+        }
+    }
+}

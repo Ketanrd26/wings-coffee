@@ -112,6 +112,7 @@ const Home = ({ setNavigatePage }) => {
       opacity: 1,
       scrollTrigger: {
         trigger: ".image_section_parent",
+     
         start: "top 80%",
         end: "bottom top",
         scrub: true,
@@ -125,6 +126,7 @@ const Home = ({ setNavigatePage }) => {
       opacity: 1,
       scrollTrigger: {
         trigger: ".image_section_parent",
+    
         start: "top 80%",
         end: "bottom top",
         scrub: true,
@@ -138,6 +140,7 @@ const Home = ({ setNavigatePage }) => {
       opacity: 1,
       scrollTrigger: {
         trigger: ".image_section_parent",
+     
         start: "top 80%",
         end: "top 10%",
 
@@ -152,6 +155,7 @@ const Home = ({ setNavigatePage }) => {
       opacity: 1,
       scrollTrigger: {
         trigger: ".image_section_parent",
+      
         start: "top 80%",
         end: "top 10%",
         scrub: true,

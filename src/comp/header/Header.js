@@ -14,7 +14,7 @@ const Header = () => {
     },
     {
       link_name: "Our Coffee",
-      link_path: "/",
+      link_path: "/our-coffee",
     },
     {
       link_name: "Contact us",
