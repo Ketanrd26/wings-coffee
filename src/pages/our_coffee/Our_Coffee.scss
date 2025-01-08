@@ -1,26 +1,219 @@
-.our_coffee_parent{
-    width: 100%;
-    // padding: 80px 0px;
-    height: 100vh;
-    background-color: var(--accent2);
+.our_coffee_parent {
+  width: 100%;
+  // padding: 80px 0px;
+  height: auto;
+  background-color: var(--accent2);
 
-    .our_coffee_cont{
+  .our_coffee_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 150px 10px 50px 10px;
+    flex-direction: column;
+    gap: var(--unit);
+    position: relative;
+
+    h2 {
+      // padding: 30px 0px;
+      font-size: 40px;
+      color: var(--accent);
+    }
+
+    img {
+      width: 80%;
+    }
+
+    .content {
+      width: 500px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: var(--unit);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: var(--white);
+      padding: 50px 20px;
+
+      p {
+        font-size: calc(var(--unit) + 5px);
+      }
+    }
+
+    .para {
+      text-align: center;
+      padding: 20px 0px;
+      font-size: calc(var(--unit) + 5px);
+    }
+  }
+}
+
+.our_coofee_second_parent {
+  width: 100%;
+  height: auto;
+  background-color: var(--white);
+  padding: 80px 0px;
+  position: relative;
+
+  .our_coffee_seconf_cont {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .left {
+      width: 60%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: var(--unit);
+
+      h3 {
+        font-size: calc(var(--unit) + 15px);
+        color: var(--accent);
+        padding: 10px 0px;
+        border-bottom: 2px solid var(--accent2);
+      }
+
+      p {
+        font-size: calc(var(--unit));
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .beans_img {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    img {
+      height: 100%;
+      width: 100%;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.counter_parent {
+  width: 100%;
+  height: auto;
+  padding: 80px 0px;
+  background-color: var(--accent);
+
+  .counters_cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--unit) * 2);
+
+    h2 {
+      color: var(--accent2);
+      font-size: calc(var(--unit) + 5px);
+      text-align: center;
+    }
+  }
+
+  .counters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: var(--unit);
+    flex-wrap: wrap;
+
+    .count {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--unit);
+
+      .icon {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
-        padding: 110px 10px 50px 10px;
-        flex-direction: column;
-        gap: var(--unit);
+        width: 100%;
+        position: relative;
 
-        h2{
-            // padding: 30px 0px;
-            font-size: 40px;
+        img {
+          width: 100%;
         }
 
+        .counter_num {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
 
-        img{
-            width: 80%;
+          font-size: calc(var(--unit) + 50px);
+
+          color: var(--accent);
+        }
+      }
+
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          color: var(--white);
+          text-align: center;
+          line-height: 110%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .our_coffee_parent {
+    .our_coffee_cont {
+      display: flex;
+      flex-direction: column;
+      justify-self: start;
+      align-items: center;
+      .content {
+        width: 100%;
+        position: static !important;
+        transform: translate(0,0) !important;
+      }
+    }
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 600px){
+    .our_coofee_second_parent{
+.our_coffee_seconf_cont{
+
+    .left{
+        width: 100%;
+    }
+}
+        .beans_img{
+            display: none;
         }
     }
 }

@@ -103,66 +103,70 @@ const Home = ({ setNavigatePage }) => {
   useEffect(() => {
     // Register ScrollTrigger with GSAP
     gsap.registerPlugin(ScrollTrigger);
-
-    // Animate images when `.image_section_parent` comes to the top 50% of the viewport
-
-    gsap.to(".img2", {
-      y: -50,
-      x: 150, // Move image up by 50px
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".image_section_parent",
-     
-        start: "top 80%",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
+  
+    // Create a GSAP matchMedia context
+    const mm = gsap.matchMedia();
+  
+    // Define animations for screens wider than 500px
+    mm.add("(min-width: 501px)", () => {
+      // Animate images when `.image_section_parent` comes to the viewport
+      gsap.to(".img2", {
+        y: -50,
+        x: 150,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".image_section_parent",
+          start: "top 80%",
+          end: "bottom top",
+          scrub: true,
+          markers: false,
+        },
+      });
+  
+      gsap.to(".img3", {
+        y: -30,
+        x: -150,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".image_section_parent",
+          start: "top 80%",
+          end: "bottom top",
+          scrub: true,
+          markers: false,
+        },
+      });
+  
+      gsap.to(".img4", {
+        y: -40,
+        x: -200,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".image_section_parent",
+          start: "top 80%",
+          end: "top 10%",
+          scrub: true,
+          markers: false,
+        },
+      });
+  
+      gsap.to(".img5", {
+        y: -50,
+        x: 200,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".image_section_parent",
+          start: "top 80%",
+          end: "top 10%",
+          scrub: true,
+          markers: false,
+        },
+      });
     });
-
-    gsap.to(".img3", {
-      y: -30,
-      x: -150, // Move image up by 30px
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".image_section_parent",
-    
-        start: "top 80%",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-    });
-
-    gsap.to(".img4", {
-      y: -40,
-      x: -200, // Move image up by 30px
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".image_section_parent",
-     
-        start: "top 80%",
-        end: "top 10%",
-
-        scrub: true,
-        markers: false,
-      },
-    });
-
-    gsap.to(".img5", {
-      y: -50,
-      x: 200, // Move image up by 30px
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".image_section_parent",
-      
-        start: "top 80%",
-        end: "top 10%",
-        scrub: true,
-        markers: false,
-      },
-    });
+  
+    // Cleanup function to clear GSAP matchMedia context
+    return () => mm.revert();
   }, []);
+  
 
   const navigate = useNavigate();
 
@@ -272,7 +276,7 @@ const Home = ({ setNavigatePage }) => {
               </div>
             </div>
             <div class="right">
-              <input type="search" />
+              <input type="search" placeholder='search'  />
               <span>
                 <IoSearchOutline />
               </span>

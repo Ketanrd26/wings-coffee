@@ -1,0 +1,314 @@
+.footer-parent {
+  padding: 20px 10px;
+  background: var(--black);
+  .footer-cont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    .company-details {
+      width: 30%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: #ece8dd;
+
+      .footer-logo {
+        background: url("../../asstes/wings_logo.webp");
+        width: 150px;
+        aspect-ratio: 2/1;
+      }
+      p {
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 300;
+      }
+    }
+    .footer-pages {
+      width: 20%;
+      padding: 10px;
+      .page-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        h4 {
+          color: var(--white);
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+      .pages-link {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+
+        a {
+          color: #ece8dd;
+          font-size: 14px;
+          line-height: 25px;
+          font-weight: 300;
+          &:hover {
+            color: var(--accent2);
+          }
+        }
+      }
+    }
+    .footer-social-media {
+      width: 20%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .footer-social-media-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+
+        h4 {
+          color: var(--white);
+
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+      .footer-social-media-link {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        a {
+          color: #ece8dd;
+          font-size: 14px;
+          line-height: 25px;
+          font-weight: 300;
+          &:hover {
+            color: var(--accent2);
+          }
+        }
+      }
+    }
+    .footer-contact {
+      width: 30%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+gap: 10px;
+      .contact-footer-page {
+        h4 {
+          color: var(--white);
+
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+      .location-phone-email {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        gap: 10px;
+        justify-content: flex-start;
+
+        .icons-details-address {
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+      .footer-iconss {
+        color: var(--white);
+
+        font-size: 20px;
+      }
+      .content-icons {
+        color: #ece8dd;
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 300;
+        display: flex;
+        justify-content: flex-start;
+        &:hover {
+          color: var(--accent2);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer-parent {
+    .footer-cont {
+      flex-wrap: wrap;
+      width: 100%;
+
+      .company-details {
+        width: 45%;
+        .footer-logo {
+        }
+        p {
+        }
+      }
+      .footer-pages {
+        width: 20%;
+        .page-heading {
+          h4 {
+          }
+        }
+        .pages-link {
+          a {
+          }
+        }
+      }
+      .footer-social-media {
+        width: 20%;
+
+        .footer-social-media-heading {
+          h4 {
+          }
+        }
+        .footer-social-media-link {
+          a {
+          }
+        }
+      }
+      .footer-contact {
+        width: 90%;
+
+        .contact-footer-page {
+          h4 {
+          }
+        }
+        .location-phone-email {
+          .icons-details-address {
+          }
+        }
+        .footer-iconss {
+        }
+        .content-icons {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .footer-parent {
+    .footer-cont {
+      flex-wrap: wrap;
+      width: 100%;
+
+      .company-details {
+        width: 50%;
+        .footer-logo {
+        }
+        p {
+        }
+      }
+      .footer-pages {
+        width: 40%;
+        .page-heading {
+          h4 {
+          }
+        }
+        .pages-link {
+          a {
+          }
+        }
+      }
+      .footer-social-media {
+        width: 50%;
+
+        .footer-social-media-heading {
+          h4 {
+          }
+        }
+        .footer-social-media-link {
+          a {
+          }
+        }
+      }
+      .footer-contact {
+        width: 40%;
+
+        .contact-footer-page {
+          h4 {
+          }
+        }
+        .location-phone-email {
+          .icons-details-address {
+          }
+        }
+        .footer-iconss {
+        }
+        .content-icons {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .footer-parent {
+    .footer-cont {
+      flex-direction: column;
+      gap: 0px;
+
+      .company-details {
+        width: 100%;
+        .footer-logo {
+        }
+        p {
+        }
+      }
+      .footer-pages {
+        width: 100%;
+        .page-heading {
+          h4 {
+          }
+        }
+        .pages-link {
+          a {
+          }
+        }
+      }
+      .footer-social-media {
+        width: 100%;
+
+        .footer-social-media-heading {
+          h4 {
+          }
+        }
+        .footer-social-media-link {
+          a {
+          }
+        }
+      }
+      .footer-contact {
+        width: 100%;
+
+        .contact-footer-page {
+          h4 {
+          }
+        }
+        .location-phone-email {
+          .icons-details-address {
+          }
+        }
+        .footer-iconss {
+        }
+        .content-icons {
+        }
+      }
+    }
+  }
+}

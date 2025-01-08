@@ -1,0 +1,58 @@
+.error_page_parent {
+  width: 100%;
+  // margin-top: 112px;
+  height: calc(100svh);
+  position: relative;
+  background-color: var(--white);
+
+  .error_page_cont {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: calc(var(--unit) + 10px);
+    }
+  }
+
+  .img1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+
+    // transform: rotate(180deg);
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .img2 {
+    position: absolute;
+    width: 50%;
+    right: -5%;
+    top: 13%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  
+
+    img {
+      width: 70%;
+    }
+  }
+}
+
+
+@media only screen and (max-width:1000px) {
+    .error_page_parent{
+        background-image: url("../../asstes/err_bg.jpg");
+        .img1,.img2{
+            display: none;
+        }
+    }
+}

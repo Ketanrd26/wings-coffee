@@ -140,7 +140,47 @@
     height: 100%;
 
     img {
-      width: 100%;
+      height: 100%;
     }
   }
+}
+
+
+@media only screen and (max-width:1000px) {
+ .herosection_parent{
+  .herosection_cont{
+    .headings_list{
+      .hero_heading{
+        font-size: 110px;
+        height: 119px;
+      }
+    }
+  }
+
+
+ } 
+}
+
+@media only screen and (max-width:600px){
+  .herosection_parent{
+    .herosection_cont{
+      position: relative;
+      z-index: 2;
+      .headings_list{
+        .hero_heading{
+          font-size: 80px;
+          height: 84px;
+
+
+          &:nth-child(2){
+            height: 78px;
+          }
+        }
+      }
+    }
+  
+  .image{
+    right: 15%;
+  }
+   } 
 }
