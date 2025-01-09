@@ -50,7 +50,7 @@ const Header = () => {
     <>
       <div
         className={`header_parent ${
-          header || location.pathname === "/contactus" && "*" ? "active" : ""
+          header || location.pathname === "/contactus" || location.pathname === "*" || location.pathname === "/myshop"? "active" : ""
         }`}
       >
         <div class="header_cont">

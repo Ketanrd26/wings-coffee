@@ -17,7 +17,8 @@
       align-items: flex-start;
       gap: var(--unit);
       flex-direction: column;
-
+      position: relative;
+      z-index: 2;
       h2 {
         font-size: calc(var(--unit) + 25px);
         color: var(--accent2);
@@ -83,8 +84,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 200px;
-            height: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            height: auto;
             display: none;
             position: absolute;
             top: 50%;
@@ -93,7 +95,7 @@
             transition: var(--trans);
 
             img {
-              height: 40px;
+              height: 35px;
             }
 
             .kettle {
@@ -114,9 +116,10 @@
           }
 
           &:hover {
-            border: none;
+          border: none;
             .animation {
               display: flex;
+             border: 1px solid var(--accent);
             }
 
             span {
@@ -150,7 +153,7 @@
     .contact_page_cont {
       width: 100%;
       height: 60%;
-      padding:80px 10px;
+      padding: 80px 10px;
       transform: translateY(25%);
 
       .form {
@@ -168,7 +171,6 @@
       img {
         width: 100% !important;
         height: 100% !important;
-      
       }
     }
   }

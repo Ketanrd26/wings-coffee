@@ -25,6 +25,14 @@
       // .image{
       //     justify-content: flex-start !important;
       // }
+
+      // .content{
+      //   align-items: flex-end;
+
+      //   p{
+      //     text-align: right;
+      //   }
+      // }
     }
 
     .image {
@@ -44,7 +52,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: var(--unit);
 
       h2 {
@@ -52,7 +60,7 @@
       }
 
       p {
-        text-align: center;
+        // text-align: center;
         word-spacing: 10px;
       }
     }
@@ -182,45 +190,46 @@
             cursor: pointer;
             position: relative;
             transition: var(--trans);
-
+  
             span {
               height: auto;
               display: flex;
               justify-content: center;
               align-items: center;
-
+  
               img {
                 height: 30px;
                 transform: rotateY(180deg);
               }
             }
-
+  
             .animation {
               display: flex;
               justify-content: center;
               align-items: center;
-              width: 200px;
-              height: 50px;
+              aspect-ratio: 1;
+              border-radius: 50%;
+              height: auto;
               display: none;
               position: absolute;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
               transition: var(--trans);
-
+  
               img {
-                height: 40px;
+                height: 35px;
               }
-
+  
               .kettle {
                 transform: rotateY(180deg);
                 animation: pourf 3s linear forwards;
-
+  
                 @keyframes pourf {
                   0% {
                     transform: rotateY(180deg);
                   }
-
+  
                   100% {
                     transform: translate(7px, -16px) rotate(210deg)
                       rotateX(150deg);
@@ -228,13 +237,14 @@
                 }
               }
             }
-
+  
             &:hover {
-              border: none;
+            border: none;
               .animation {
                 display: flex;
+               border: 1px solid var(--accent);
               }
-
+  
               span {
                 display: none;
               }
@@ -269,6 +279,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       height: 70%;
+      width: 50%;
     }
 
     .img2 {
@@ -276,6 +287,7 @@
       top: 20%;
       right: 0;
       height: 40%;
+      width: 30%;
     }
 
     .img3 {
@@ -283,6 +295,7 @@
       top: 20%;
       left: 0;
       height: 40%;
+      width: 30%;
     }
     .img4 {
       position: absolute;
@@ -338,7 +351,7 @@
 
     .para {
       text-align: center;
-      font-size: 30px;
+      font-size: 16px;
     }
 
     .tea_btn {
@@ -371,8 +384,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        height: auto;
         display: none;
         position: absolute;
         top: 50%;
@@ -381,7 +395,7 @@
         transition: var(--trans);
 
         img {
-          height: 40px;
+          height: 35px;
         }
 
         .kettle {
@@ -394,16 +408,18 @@
             }
 
             100% {
-              transform: translate(7px, -16px) rotate(210deg) rotateX(150deg);
+              transform: translate(7px, -16px) rotate(210deg)
+                rotateX(150deg);
             }
           }
         }
       }
 
       &:hover {
-        border: none;
+      border: none;
         .animation {
           display: flex;
+         border: 1px solid var(--accent);
         }
 
         span {

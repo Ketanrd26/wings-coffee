@@ -79,25 +79,8 @@ const Home = ({ setNavigatePage }) => {
       name: "A-10 Blend",
       price: "40 - 140ر.ق",
       image: image2,
-    },
-    {
-      category: "coffee",
-      name: "A-10 Blend",
-      price: "40 - 140ر.ق",
-      image: image2,
-    },
-    {
-      category: "coffee",
-      name: "A-10 Blend",
-      price: "40 - 140ر.ق",
-      image: image2,
-    },
-    {
-      category: "coffee",
-      name: "A-10 Blend",
-      price: "40 - 140ر.ق",
-      image: image2,
-    },
+    }
+   
   ];
 
   useEffect(() => {
@@ -319,11 +302,11 @@ const Home = ({ setNavigatePage }) => {
         <h2>Gallery</h2>
 
         <div class="image_section_cont cont">
-          <img src={gallery1} className="img1" alt="" />
-          <img src={gallery2} className="img2" alt="" />
-          <img src={gallery3} className="img3" alt="" />
-          <img src={gallery4} className="img4" alt="" />
-          <img src={gallery5} className="img5" alt="" />
+        <div class="img1 bg-img-cover " style={{backgroundImage:`url(${gallery1})`}} ></div>
+          <div class="img2 bg-img-cover " style={{backgroundImage:`url(${gallery2})`}} ></div>
+          <div class="img3 bg-img-cover " style={{backgroundImage:`url(${gallery3})`}} ></div>
+          <div class="img4 bg-img-cover " style={{backgroundImage:`url(${gallery4})`}} ></div>
+          <div class="img5 bg-img-cover " style={{backgroundImage:`url(${gallery5})`}} ></div>
           {/* <img src={image1} className="img6" alt=""/> */}
         </div>
       </div>
@@ -333,14 +316,14 @@ const Home = ({ setNavigatePage }) => {
       <div class="qoute_section parent">
         <div class="qoute_section_cont cont">
           <div class="qoute">
-            <h2>We are for</h2>
-            <h2>unique</h2>
+            <h2>We are for unique</h2>
+       
             <h2>aesthetics</h2>
           </div>
 
           <div class="para">
             <p>
-              We are for the beautiful and the good, <br />
+              We are for the beautiful and the good, 
               to compose and to share.
               <br />
               We are for unique aesthetics.
