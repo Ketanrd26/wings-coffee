@@ -30,12 +30,12 @@ const Shop = () => {
 
   const [openSort, setOpenSort] = useState(false);
 
-  const closeAll = () => {
-    setToggleItem({
-      verticle: false,
-      grid: false,
-    });
-  };
+  // const closeAll = () => {
+  //   setToggleItem({
+  //     verticle: false,
+  //     grid: false,
+  //   });
+  // };
 
   const handleToggle = (key) => {
     setToggleItem((prevState) => ({
@@ -137,6 +137,22 @@ const Shop = () => {
   ];
 
   console.log(openSort);
+
+  const [filterPanel, setFilterPanel] = useState({
+    price: true,
+    category: false,
+  });
+
+  const [openFilter, setfilter] = useState(false);
+
+  const openPanel = (key) => {
+    setFilterPanel((prev) => ({
+      ...prev,
+      price: false,
+      category: false,
+      [key]: true,
+    }));
+  };
   return (
     <>
       <div class="shop_product parent">
@@ -309,7 +325,7 @@ const Shop = () => {
               </span>
               Sort By
             </p>
-            <p>
+            <p onClick={() => setfilter(true)}>
               <span>
                 <TbFilters />
               </span>
@@ -336,12 +352,54 @@ const Shop = () => {
           </div>
         )}
 
-        <div class="filter_section_parent" onClick={() => setOpenSort(false)}>
+     { openFilter &&  <div class="filter_section_parent" >
           <div class="top_section">
             <p>Filters</p>
             <p>CLEAR ALL</p>
           </div>
-        </div>
+          <div class="middle">
+            <div class="sidebar">
+              <p onClick={() => openPanel("price")}>Price</p>
+              <p onClick={() => openPanel("category")}>Category</p>
+            </div>
+            <div class="main_section">
+              {filterPanel.price && (
+                <div class="price">
+                  <div class="slider">
+                    <Slider
+                      getAriaLabel={() => "Price range"}
+                      value={value}
+                      onChange={handleChange}
+                      valueLabelDisplay="auto"
+                      getAriaValueText={valuetext}
+                      min={100}
+                      max={6700}
+                      step={50} // Adjust the step for finer or coarser control
+                    />
+                    <p>
+                      <span>{value[0]}</span> - <span>{value[1]}+</span>
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {filterPanel.category && (
+                <div class="category">
+                  {product.slice(0, 5).map((item, index) => (
+                    <div class="list">
+                      <input type="checkbox" />
+                      <p>{item.category}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+          <div class="bottom">
+            <p onClick={() => setfilter(false)}>Close</p>
+            <p onClick={() => setfilter(false)}>Apply</p>
+          </div>
+        </div>}
       </div>
     </>
   );
