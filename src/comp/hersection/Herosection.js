@@ -10,6 +10,7 @@ import pour_top from "../../asstes/puring_coffee_top.png";
 import pour_bottom from "../../asstes/puring_coffee_bottom.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Button_comp from "../button_comp/Button_comp";
 const Herosection = () => {
 
   useEffect(()=>{
@@ -38,16 +39,7 @@ const Herosection = () => {
             consectetur sed voluptatibus neque nobis rerum amet obcaecati.
             Eveniet, ipsum perspiciatis.
           </p>
-          <div class="tea_btn">
-            <span>
-              <img src={teapot} alt="" />
-            </span>
-            <span>Shop Now</span>
-            <div class="animation">
-              <img src={kettle} alt="" className="kettle" />
-              <img src={cup} alt="" className="cup" />
-            </div>
-          </div>
+          <Button_comp btn_path="/myshop" btn_text="Shop Now" borderColor="white" color="white"  />
         </div>
         <div class="image">
           {/* <img src={pouring_coofee} alt="" /> */}

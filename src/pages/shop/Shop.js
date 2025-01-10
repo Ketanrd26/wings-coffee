@@ -4,20 +4,31 @@ import { IoAppsOutline } from "react-icons/io5";
 import { Button, Dropdown } from "antd";
 import { IoSearchOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import teapot from "../../asstes/teapot.png";
-import kettle from "../../asstes/kitchen.png";
-import cup from "../../asstes/coffee-cup.png";
+
 import { RiStarSFill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import "./Shop.scss";
 import { Slider } from "@mui/material";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { IoGrid } from "react-icons/io5";
+
+import Button_comp from "../../comp/button_comp/Button_comp";
+import { BiSort } from "react-icons/bi";
+import { TbFilters } from "react-icons/tb";
+import { FaFirefoxBrowser } from "react-icons/fa";
+import { IoIosStarOutline } from "react-icons/io";
+import { CiDiscount1 } from "react-icons/ci";
+import { LuIndianRupee } from "react-icons/lu";
+import { HiArrowSmUp } from "react-icons/hi";
+import { IoArrowDown } from "react-icons/io5";
+import { MdGeneratingTokens } from "react-icons/md";
 const Shop = () => {
   const [toggleItem, setToggleItem] = useState({
     verticle: false,
     grid: true,
   });
+
+  const [openSort, setOpenSort] = useState(false);
 
   const closeAll = () => {
     setToggleItem({
@@ -34,7 +45,7 @@ const Shop = () => {
       [key]: true, // Only set the clicked one to true
     }));
   };
-  
+
   const product = [
     {
       category: "coffee",
@@ -96,7 +107,36 @@ const Shop = () => {
     return `${value}°C`;
   };
 
-  console.log(toggleItem, "iten")
+  const sortingItem = [
+    {
+      icon: <FaFirefoxBrowser />,
+      title: "Popularity",
+    },
+    {
+      icon: <IoIosStarOutline />,
+      title: "Latest",
+    },
+    {
+      icon: <CiDiscount1 />,
+      title: "Discount",
+    },
+    {
+      icon: <LuIndianRupee />,
+      icon2: <HiArrowSmUp />,
+      title: "Price:High to Low",
+    },
+    {
+      icon: <LuIndianRupee />,
+      icon2: <IoArrowDown />,
+      title: "Price:Low to High",
+    },
+    {
+      icon: <MdGeneratingTokens />,
+      title: "Customer Rating",
+    },
+  ];
+
+  console.log(openSort);
   return (
     <>
       <div class="shop_product parent">
@@ -176,15 +216,18 @@ const Shop = () => {
                 <div
                   className="verticle"
                   onClick={() => {
-                    handleToggle("verticle")
+                    handleToggle("verticle");
                   }}
                 >
                   <TfiMenuAlt />
                 </div>
 
-                <div class="grid"   onClick={() => {
-                    handleToggle("grid")
-                  }} >
+                <div
+                  class="grid"
+                  onClick={() => {
+                    handleToggle("grid");
+                  }}
+                >
                   <IoGrid />
                 </div>
               </div>
@@ -224,14 +267,10 @@ const Shop = () => {
                         <h4>{item.name}</h4>
 
                         <h3 className="price">{item.price}</h3>
-
-                        <div class="tea_btn">
-                          <span>
-                            <img src={teapot} alt="" />
-                          </span>
-                          <span>Add To Cart</span>
-                        
-                        </div>
+                        <Button_comp
+                          btn_path="/product"
+                          btn_text="Add To Cart"
+                        />
                       </div>
                     </Link>
                   ))}
@@ -254,19 +293,53 @@ const Shop = () => {
 
                         <h3 className="price">{item.price}</h3>
 
-                        <div class="tea_btn">
-                          <span>
-                            <img src={teapot} alt="" />
-                          </span>
-                          <span>Add To Cart</span>
-                         
-                        </div>
+                        <Button_comp btn_path="/cart" btn_text="Add To Cart" />
                       </div>
                     </Link>
                   ))}
                 </>
               )}
             </div>
+          </div>
+
+          <div class="bottom_mob_nav">
+            <p onClick={() => setOpenSort(true)}>
+              <span>
+                <BiSort />
+              </span>
+              Sort By
+            </p>
+            <p>
+              <span>
+                <TbFilters />
+              </span>
+              Filter
+            </p>
+          </div>
+        </div>
+        {openSort && (
+          <div class="sort_section_parent" onClick={() => setOpenSort(false)}>
+            <div class="sort_by_section">
+              <h3>Sort By</h3>
+              <div class="list">
+                {sortingItem.map((item, index) => (
+                  <p key={index}>
+                    <span>
+                      {item.icon}
+                      {item.icon2}
+                    </span>
+                    {item.title}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div class="filter_section_parent" onClick={() => setOpenSort(false)}>
+          <div class="top_section">
+            <p>Filters</p>
+            <p>CLEAR ALL</p>
           </div>
         </div>
       </div>

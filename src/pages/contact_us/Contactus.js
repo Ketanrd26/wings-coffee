@@ -5,6 +5,7 @@ import kettle from "../../asstes/kitchen.png";
 import cup from "../../asstes/coffee-cup.png";
 import clip_path from "../../asstes/contac_page_image.webp";
 import clip_path2 from "../../asstes/contact_img.webp"
+import Button_comp from "../../comp/button_comp/Button_comp";
 const Contactus = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -33,16 +34,8 @@ const Contactus = () => {
               <input type="text" placeholder="Last Name" />
               <input type="text" placeholder="Email" />
               <textarea type="text" placeholder="your message" />
-              <div class="tea_btn">
-                <span>
-                  <img src={teapot} alt="" />
-                </span>
-                <span>Contact Us</span>
-                <div class="animation">
-                  <img src={kettle} alt="" className="kettle" />
-                  <img src={cup} alt="" className="cup" />
-                </div>
-              </div>
+              <Button_comp btn_path="/product" btn_text="Add To Cart"  />
+
             </form>
           </div>
         </div>

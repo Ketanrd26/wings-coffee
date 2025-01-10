@@ -21,6 +21,7 @@ import gallery3 from "../../asstes/Wings-11-scaled.webp";
 import gallery4 from "../../asstes/Wings-6-scaled.webp";
 import gallery5 from "../../asstes/Wings-7-scaled.webp";
 import { Link, useNavigate } from "react-router-dom";
+import Button_comp from "../../comp/button_comp/Button_comp";
 const Home = ({ setNavigatePage }) => {
   const items = [
     {
@@ -281,16 +282,8 @@ const Home = ({ setNavigatePage }) => {
 
                   <h3 className="price">{item.price}</h3>
 
-                  <div class="tea_btn">
-                    <span>
-                      <img src={teapot} alt="" />
-                    </span>
-                    <span>Add To Cart</span>
-                    <div class="animation">
-                      <img src={kettle} alt="" className="kettle" />
-                      <img src={cup} alt="" className="cup" />
-                    </div>
-                  </div>
+                  <Button_comp btn_path="/product" btn_text="Add To Cart"  />
+
                 </div>
               </Link>
             ))}
@@ -329,17 +322,8 @@ const Home = ({ setNavigatePage }) => {
               We are for unique aesthetics.
             </p>
           </div>
+          <Button_comp btn_path="/product" btn_text="Add To Cart"  />
 
-          <div class="tea_btn">
-            <span>
-              <img src={teapot} alt="" />
-            </span>
-            <span>Know More</span>
-            <div class="animation">
-              <img src={kettle} alt="" className="kettle" />
-              <img src={cup} alt="" className="cup" />
-            </div>
-          </div>
         </div>
       </div>
     </>

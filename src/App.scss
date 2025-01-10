@@ -70,33 +70,77 @@ a {
   text-decoration: none;
 }
 
-//   .heading{
+.tea_btn {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: calc(var(--unit) / 2);
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: var(--trans);
+  color: var(--black);
 
-//     font-family: "Kanit", serif;
-//     font-weight: 600;
-//     font-style: normal;
-//     color: var(--white);
-//   }
+  span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-// .btn {
-//   padding: 10px 20px;
-//   background-color: var(--yellow);
-//   color: var(--accent);
-//   width: fit-content;
-//   border-radius: 10px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   transition: var(--trans);
-//   font-size: 20px;
-//   font-weight: 400;
-//   letter-spacing: 0.7px;
-//   word-spacing: 1px;
-//   cursor: pointer;
-//   border: none;
+  .icons {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--unit) / 3);
 
-//   &:hover{
-//     background-color: var(--accent);
-//     color: var(--white);
-//   }
-// }
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: calc(var(--unit));
+      color: inherit;
+
+      svg{
+        color: inherit;
+      }
+    }
+  }
+  &.enterBtn {
+    .icons {
+      .animatespan {
+        animation: rotatepot 0.5s linear forwards;
+        @keyframes rotatepot {
+          from {
+            transform: translateY(0) rotate(0);
+          }
+          to {
+            transform: translate(62%, -60%) rotate(25deg);
+          }
+        }
+      }
+    }
+  }
+
+  &.exitBtn {
+    .icons {
+      .animatespan {
+        transform: translate(62%, -60%) rotate(25deg);
+        animation: revserserotateopot 0.5s linear forwards;
+
+        @keyframes revserserotateopot {
+          from {
+            transform: translate(62%, -60%) rotate(25deg);
+          }
+          to {
+            transform: translateY(0) rotate(0);
+          }
+        }
+      }
+    }
+  }
+}
