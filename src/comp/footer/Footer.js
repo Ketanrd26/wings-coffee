@@ -24,8 +24,8 @@ const Footer = () => {
             <div class="pages-link">
               <Link to="/">Home</Link>
               <Link to="/our-coffee">Our Coffee</Link>
-              <Link to="/shop">Shop</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/myshop">Shop</Link>
+              <Link to="/contactus">Contact</Link>
             </div>
           </div>
           <div class="footer-social-media">
