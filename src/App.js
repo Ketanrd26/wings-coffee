@@ -14,6 +14,7 @@ import Error from "./pages/error_page/Error";
 import Footer from "../src/comp/footer/Footer"
 import PagetoTop from "../src/comp/pagetotop/Pagetotop"
 import Shop from "./pages/shop/Shop";
+import Our_cart from "../src/pages/cart/Our_cart"
 
 function App() {
   const [refresh, setRefresh] = useState(false);
@@ -82,6 +83,7 @@ function App() {
             <Route path="/our-coffee" element={<Our_Coffee />} />
             <Route path="/contactus" element={<Contactus />} />
             <Route path="/myshop" element={<Shop />} />
+            <Route path="/cart" element={<Our_cart />} />
             <Route path="*" element={<Error />} />
           </Routes>
         )}

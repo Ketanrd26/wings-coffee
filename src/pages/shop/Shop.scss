@@ -1,9 +1,9 @@
 .shop_product {
   width: 100%;
   background-color: var(--accent2);
-  height: 100svh;
-  position: fixed;
-  top: 0;
+  height: calc(100dvh - 80px);
+  // position: fixed;
+  // top: 0;
 
   margin-top: 80px;
 
@@ -217,7 +217,7 @@
 
     .right_section {
       width: 80%;
-      height: 100vh;
+      height: 100%;
       overflow-y: scroll;
       padding: 20px 10px;
 

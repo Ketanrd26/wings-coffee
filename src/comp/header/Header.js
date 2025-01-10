@@ -50,7 +50,7 @@ const Header = () => {
     <>
       <div
         className={`header_parent ${
-          header || location.pathname === "/contactus" || location.pathname === "*" || location.pathname === "/myshop"? "active" : ""
+          header || location.pathname === "/contactus" || location.pathname === "*" || location.pathname === "/myshop"  || location.pathname === "/cart" ? "active" : ""
         }`}
       >
         <div class="header_cont">
@@ -74,7 +74,7 @@ const Header = () => {
             <img src={logo} alt="" />
           </div>
           <div class={searchInput ? "left_section active" : "left_section"}>
-            <Link class="cart">
+            <Link class="cart"  to="/cart" >
               <span>Cart</span>
               <span>
                 <IoMdCart />
