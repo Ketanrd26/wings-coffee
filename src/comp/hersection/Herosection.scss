@@ -158,7 +158,13 @@
     }
 
     .image {
-      right: 15%;
+      right: 0 !important;
+
+      .img1{
+        width: 100%;
+        top: 13.5% !important;
+        right: 0 !important;
+      }
     }
   }
 }

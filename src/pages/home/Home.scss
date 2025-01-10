@@ -90,6 +90,8 @@
       width: 100%;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid grey;
+      padding: 10px 0px;
 
       .left {
         width: 50%;
@@ -274,6 +276,7 @@
         font-weight: 700;
         font-size: inherit;
         line-height: 80%;
+        text-align: center;
       }
     }
 
